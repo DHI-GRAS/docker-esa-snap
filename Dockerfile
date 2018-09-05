@@ -1,5 +1,7 @@
 FROM debian:latest
 
+USER root
+
 RUN apt-get update && \
     apt-get -y install \
       'wget' 'libgfortran3'
@@ -14,6 +16,9 @@ RUN snap --nosplash --nogui --modules --update-all
 
 # set gpt max memory to 16GB
 RUN sed -i -e 's/-Xmx1G/-Xmx16G/g' /usr/local/snap/bin/gpt.vmoptions
+
+WORKDIR /work
+RUN chmod 777 /work
 
 # set entrypoint
 ENTRYPOINT ["/usr/local/snap/bin/gpt"]
