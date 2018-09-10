@@ -13,5 +13,5 @@ Get it from https://hub.docker.com/r/mrmoor/esa-snap/
 
 Or get it via docker from the cmd:
 
-    docker pull mrmoor/esa-snap
+    docker pull dhigras/esa-snap
   
