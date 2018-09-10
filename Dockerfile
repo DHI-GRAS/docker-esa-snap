@@ -14,8 +14,8 @@ RUN wget http://step.esa.int/downloads/6.0/installers/esa-snap_sentinel_unix_6_0
 # update snap
 RUN snap --nosplash --nogui --modules --update-all
 
-# set gpt max memory to 16GB
-RUN sed -i -e 's/-Xmx1G/-Xmx16G/g' /usr/local/snap/bin/gpt.vmoptions
+# set gpt max memory to 32GB
+RUN sed -i -e 's/-Xmx1G/-Xmx32G/g' /usr/local/snap/bin/gpt.vmoptions
 
 WORKDIR /work
 RUN chmod 777 /work
