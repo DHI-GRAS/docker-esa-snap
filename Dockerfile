@@ -17,6 +17,9 @@ RUN snap --nosplash --nogui --modules --update-all
 # set gpt max memory to 32GB
 RUN sed -i -e 's/-Xmx1G/-Xmx32G/g' /usr/local/snap/bin/gpt.vmoptions
 
+# set s3tbx readers to per-pixel geocoding
+COPY s3tbx.properties $HOME/.snap/etc/s3tbx.properties
+
 WORKDIR /work
 RUN chmod 777 /work
 
