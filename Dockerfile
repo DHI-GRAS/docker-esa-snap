@@ -4,7 +4,7 @@ USER root
 
 RUN apt-get update && \
     apt-get -y install \
-      'wget' 'libgfortran3'
+      'wget' 'libgfortran4'
 
 # install snap
 RUN wget http://step.esa.int/downloads/7.0/installers/esa-snap_sentinel_unix_7_0.sh && \
