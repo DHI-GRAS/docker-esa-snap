@@ -2,9 +2,7 @@ FROM debian:buster
 
 USER root
 
-RUN apt-get update && \
-    apt-get -y install \
-      'wget'
+RUN apt-get update && apt-get -y install wget procps fonts-dejavu fontconfig
 
 # install snap
 RUN wget http://step.esa.int/downloads/8.0/installers/esa-snap_sentinel_unix_8_0.sh && \
