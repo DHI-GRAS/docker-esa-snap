@@ -2,7 +2,7 @@ FROM debian:buster
 
 USER root
 
-RUN apt-get update && apt-get -y install wget procps fonts-dejavu fontconfig
+RUN apt-get update && apt-get -y install wget procps fonts-dejavu fontconfig libgfortran5
 
 # install snap
 RUN wget http://step.esa.int/downloads/8.0/installers/esa-snap_sentinel_unix_8_0.sh && \
@@ -22,6 +22,9 @@ RUN sed -i -e 's/-Xmx1G/-Xmx32G/g' /usr/local/snap/bin/gpt.vmoptions
 
 WORKDIR /work
 RUN chmod 777 /work
+
+RUN useradd manfred
+USER manfred
 
 ENV LD_LIBRARY_PATH ".:$LD_LIBRARY_PATH"
 
