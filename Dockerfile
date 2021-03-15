@@ -23,6 +23,9 @@ RUN sed -i -e 's/-Xmx1G/-Xmx32G/g' /usr/local/snap/bin/gpt.vmoptions
 WORKDIR /work
 RUN chmod 777 /work
 
+RUN useradd manfred
+USER manfred
+
 ENV LD_LIBRARY_PATH ".:$LD_LIBRARY_PATH"
 
 # set s3tbx readers to per-pixel geocoding
