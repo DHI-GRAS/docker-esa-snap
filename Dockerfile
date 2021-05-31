@@ -1,6 +1,6 @@
 FROM debian:buster
 
-USER root
+#USER root
 
 RUN apt-get update && apt-get -y install wget procps fonts-dejavu fontconfig libgfortran5
 
@@ -20,11 +20,11 @@ RUN snap --nosplash --nogui --modules --update-all 2>&1 | \
 # set gpt max memory to 32GB
 RUN sed -i -e 's/-Xmx1G/-Xmx32G/g' /usr/local/snap/bin/gpt.vmoptions
 
-WORKDIR /work
-RUN chmod 777 /work
+#WORKDIR /work
+#RUN chmod 777 /work
 
-RUN useradd manfred
-USER manfred
+#RUN useradd manfred
+#USER manfred
 
 ENV LD_LIBRARY_PATH ".:$LD_LIBRARY_PATH"
 
