@@ -12,7 +12,7 @@ RUN wget http://step.esa.int/downloads/8.0/installers/esa-snap_sentinel_unix_8_0
 RUN snap --nosplash --nogui --modules --list
 
 # update snap modules
-RUN snap --nosplash --nogui --modules --update-all 2>&1 | while read -r line ; do echo "$line" ; [ "$line" = "updates=0" ] && sleep 2 && ps aux && killall -9 "java" ; done ; echo "jonas hack"
+RUN snap --nosplash --nogui --modules --update-all 2>&1 | while read -r line ; do echo "$line" ; [ "$line" = "updates=0" ] && sleep 2 && ps aux && killall -9 "java" ; done ; echo "be happy"
 
 #RUN useradd manfred
 #USER manfred
