@@ -5,9 +5,9 @@ FROM debian:buster
 RUN apt-get update && apt-get -y install wget procps fonts-dejavu fontconfig libgfortran5
 
 # install snap
-RUN wget https://download.esa.int/step/snap/11.0/installers/esa-snap_sentinel_linux-11.0.0.sh && \
-    sh esa-snap_sentinel_linux-11.0.0.sh -q && \
-    rm esa-snap_sentinel_linux-11.0.0.sh
+RUN wget https://download.esa.int/step/snap/12.0/installers/esa-snap_sentinel_linux-12.0.0.sh && \
+    sh esa-snap_sentinel_linux-12.0.0.sh -q && \
+    rm esa-snap_sentinel_linux-12.0.0.sh
 
 #RUN snap --nosplash --nogui --modules --list
 
@@ -18,7 +18,7 @@ RUN snap --nosplash --nogui --modules --update-all 2>&1 | while read -r line ; d
 #USER manfred
 WORKDIR /work
 RUN chmod 777 /work
-ENV LD_LIBRARY_PATH ".:$LD_LIBRARY_PATH"
+ENV LD_LIBRARY_PATH=".:$LD_LIBRARY_PATH"
 
 # set s3tbx readers to per-pixel geocoding
 COPY s3tbx.properties /usr/local/snap/etc/s3tbx.properties
